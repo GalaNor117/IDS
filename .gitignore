@@ -1,0 +1,45 @@
+# Archivos de entorno
+.env
+*.env
+.env.local
+.env.development
+.env.production
+
+# Archivos de configuración sensible
+config/secrets.yml
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyd
+*.pyo
+*.so
+.Python
+venv/
+env/
+.venv/
+pip-selfcheck.json
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs y databases
+*.log
+*.sqlite
+*.db
+
+# Dependencias
+node_modules/
