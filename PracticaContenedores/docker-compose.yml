@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     networks:
-      - my_network
+      - frontend_network
 
   backend:
     build: ./backend
@@ -22,7 +22,8 @@ services:
     depends_on:
       - db
     networks:
-      - my_network
+      - backend_network
+      - frontend_network
 
   db:
     image: mysql:8.0
@@ -35,11 +36,13 @@ services:
       - mysql_data:/var/lib/mysql
       - ./backend/database/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - my_network
+      - backend_network
 
 volumes:
   mysql_data:
 
 networks:
-  my_network:
+  frontend_network:
+    driver: bridge
+  backend_network:
     driver: bridge
